@@ -1,0 +1,34 @@
+#main-navigation{
+    background-color: #390281;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+}
+
+#saved-posts{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 54rem;
+    margin: 7rem auto 2rem auto;
+    box-shadow: 1px 1px 12px rgb(0 0 0 / 40%);
+}
+
+#post ul{
+    margin: 0;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 3rem;
+}
+
+#post li{
+    list-style: none;
+    width: 23rem;
+    border: 1px solid #1a1717;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+#post h3, p{
+    margin: 0 0 0.5rem 0;
+}

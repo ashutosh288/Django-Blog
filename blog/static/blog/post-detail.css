@@ -1,0 +1,262 @@
+body {
+    background-color: #e7e7e7;
+  }
+  
+#main-navigation {
+    background-color: #390281;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+#summary {
+    margin: 8rem auto 3rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 90rem;
+    border-radius: 16px;
+    background-color: #5706c0;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    height: 22rem;
+  }
+  
+#summary h2 {
+    color: white;
+    font-size: 3.5rem;
+    width: 50rem;
+    margin-bottom: 0.75rem;
+  }
+
+#details{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.tag {
+    background-color: #ffffff;
+    color: #390281;
+    padding: 0.45rem;
+    width: 4rem;
+    border-radius: 10px;
+}
+
+#read-later {
+    margin: 0 0 1.5rem 0;
+    position: absolute;
+    bottom: 0;
+}
+
+#read-later button{
+    max-width: 12rem;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#read-later button:hover,
+#read-later button:active {
+    border-color: #7944bf;
+    background-color: #7944bf;
+    color: #ffffff;
+}
+
+.active-rl button{
+    border-color: #7944bf;
+    background-color: #7944bf;
+    color: #ffffff;
+}
+  
+#summary article {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-align: right;
+    color: white;
+  }
+  
+#summary article img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 12px;
+    transform: rotateZ(5deg);
+    border: 5px solid white;
+    margin-bottom: 1rem;
+  }
+  
+#summary address {
+    font-weight: bold;
+  }
+
+#summary a{
+    color: #ffffff;
+    text-decoration: none;
+}
+  
+#summary time {
+    font-weight: bold;
+  } 
+  
+main {
+    width: 90%;
+    max-width: 90rem;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+#comment-sec {
+    background-color: white;
+    margin: 1rem 4rem;
+    padding: 2rem;
+    max-width: 20rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#comment-sec h2{
+    font-weight: bolder;
+    margin: 0 0 1rem 0;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    max-width: 15rem;
+    margin-bottom: 0.75rem;
+}
+
+.form-field label{
+    font-weight: bolder;
+    margin-bottom: 0.25rem;
+}
+
+.form-field input{
+    height: 1.5rem;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    outline: none;
+}
+
+.sbt-btn{
+    width: 6rem;
+    height: 1.75rem;
+    font-size: 15px;
+    background-color: #321da7;
+    color: #ffffff;
+    border: #261395;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.sbt-btn:hover,
+.sbt-btn:active{
+    background-color: #4737a5;
+}
+
+.errorlist{
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.errorlist li{
+    list-style: none;
+    color: #ff0000;
+}
+
+.invalid label{
+    color: #ff0000;
+}
+
+.invalid input,
+.invalid textarea{
+    border-color: #ff0000;
+}
+
+#alert-fail{
+    position: relative;
+    top: 5rem;
+    padding: 0.25rem;
+    border: 2px solid #f90404;
+    background-color: #e19090;
+    max-height: 4rem;
+}
+
+#alert-fail p{
+    color: #db0000;
+}
+
+#alert-success{
+    position: relative;
+    top: 5rem;
+    padding: 0.25rem;
+    border: 2px solid #027000;
+    background-color: #befdb6;
+    max-height: 4rem;
+}
+
+#alert-success p{
+    color: #027000;
+}
+
+.alert-head{
+    font-weight: bolder;
+}
+
+#close{
+    position: absolute;
+    right: 0.5rem;
+    border: 1px solid #3535f9;
+    background-color: #3535f9;
+    height: 1.75rem;
+    color: black;
+    width: 4rem;
+    cursor: pointer;
+}
+
+#comments{
+    width: 90%;
+    max-width: 90rem;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#comments ul{
+    margin: 0;
+    padding: 0;
+}
+
+#comments li{
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+#comments li:last-of-type {
+    margin-bottom: 0;
+}
+
+#comments p{
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+}
+
+.comment-head{
+    display: flex;
+}
+
+.comment-head img{
+    max-width: 2rem;
+}
+
+.comment-head h3{
+    margin: 0;
+    padding: 6px;
+}

@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+  {{ post.title }}
+{% endblock %} 
+
+{% block static_files %}
+  <link rel="stylesheet" href="{% static 'blog/post-detail.css' %}">
+{% endblock %}
+
+{% block body %}
+
+  {% if form.errors %}
+    <div id="alert-fail">
+      <p>
+        <span class="alert-head">Error-Occured</span> - Please Check and Try Again !! 
+        <button id="close" onclick="close_alert()">Close</button>
+      </p>
+    </div>
+  {% endif %}
+  </div>
+  <section id="summary">
+    <h2>{{ post.title }}</h2>
+    <div>
+      {% for tag in post_tags %}
+        <span class="tag">{{ tag.caption }}</span>
+      {% endfor %}
+    </div>
+
+    <div id="read-later" class="{% if read_later_active %} active-rl {% endif %}">
+      <form method="POST", action="{% url 'read-later' %}">
+        {% csrf_token %}
+        <input type="hidden" name="post_id" value="{{ post.id }}">
+        {% if read_later_active %} 
+          <button>Remove From "Read Later"</button>
+        {% else %}
+          <button>Read Later</button>
+        {% endif %}
+        
+      </form>    
+    </div>
+
+    <article>
+      <img src="{{ post.image.url }}" alt="{{ post.title }}" srcset="">
+      <address><a href="mailto:{{ post.author.email_add }}">By {{ post.author }}</a></address>
+      <div>
+        Last Upadated On <time>{{ post.date|date:"d M Y" }}</time>
+      </div>
+    </article>
+  </section>
+
+  <main>
+    <p>
+      {{ post.content|linebreaks }}
+    </p>
+  </main>
+
+  <section id="comments">
+    <ul>
+      {% if not all_comments %}
+        <li>
+          <p>Be the first to comment....</p>
+        </li>
+      {% else %}
+        {% for comment in all_comments %}
+          <li>
+            <div class="comment-head">
+              <img src="{% static 'blog/images/profile.jpg' %}">
+              <h3>{{ comment.user_name }}</h3>
+            </div>
+            <p>{{ comment.user_comment|linebreaks }}</p>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </section>
+
+  <section id="comment-sec">
+    <h2>Comment Here.....</h2>
+    <form action="{% url 'post-detail-page' post.slug %}" method="POST">
+      {% csrf_token %}
+      {% for form_field in form %}
+        <div class="form-field {% if form_field.errors %}invalid{% endif %}">
+          {{ form_field.label_tag }}
+          {{ form_field }}
+          {{ form_field.errors }}
+        </div>
+      {% endfor %}
+      <input type="submit" class="sbt-btn"> 
+    </form>
+  </section>
+
+  <script type="text/javascript">
+    function close_alert() {
+      fail_alert = document.getElementById("alert-fail")
+      fail_alert.style.display = "none"
+
+      console.log("Ok Done!!")
+    }
+  </script>
+{% endblock %}

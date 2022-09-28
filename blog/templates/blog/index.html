@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+  Ashutosh Blog
+{% endblock %} 
+
+{% block static_files %}
+  <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+  <link rel="stylesheet" href="{% static "blog/includes/post-preview.css" %}" />
+{% endblock %}
+
+{% block body %}
+<section id="welcome">
+  <header>
+    <img src="{% static 'blog/images/my-img.jpg' %}" alt="Ashutosh - The Author Of This Blog" />
+    <h2>Ashutosh's Blog</h2>
+  </header>
+  <p>Hi, I am Ashutosh and I love to blog about technology and programming!</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest Thoughts</h2>
+
+  <ul>
+    {% for post in posts %}
+      {% include 'blog/includes/post-preview.html' %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="about">
+  <h2>About me</h2>
+  <p>
+    Hi I am an IT Undergraduate at Dr APJ Abdul Kalam Technical University. I want to become a Backend Web Developer. Currentluy I am working on Python Language, I also have a good knowledge
+    about HTML, CSS and Javascript.
+  </p>
+</section>
+{% endblock %}

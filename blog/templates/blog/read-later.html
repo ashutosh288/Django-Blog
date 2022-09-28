@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+  Saved Posts
+{% endblock %}
+
+{% block static_files %}
+  <link rel="stylesheet" href="{% static 'blog/read-later.css' %}" />
+{% endblock %} 
+
+{% block body %}
+  <section id="saved-posts">
+    <div id=post>
+      <ul>
+        {% if has_posts %}
+          {% for post in posts_list %}
+            <li>
+              <h3>{{ post.title }}</h3>
+              <p>
+                {{ post.content }}... <span class="para-link"><a href="{% url 'post-detail-page' slug=post.slug %}">Read More</a></span>
+              </p>
+            </li>
+          {% endfor %}
+        {% else %}
+          <li>
+              <p style="font-weight: bold;">
+                You doesn't saved any post for later.
+              </p>
+            </li>
+        {% endif %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}
